@@ -96,49 +96,68 @@ int Deletar()
 
 
 int main()
-    {
+{
 	int opcao = 0; // Variavel opcao;
 	int laco = 1;
+	char senhadigitada[10] = "a";
+	int comparacao;
 	
-	for(laco = 1; laco = 1;)
-	{
+	printf("### Cartorio da EBAC ### \n \n \n");
+	printf("Login de administrador! \n \n Digite sua senha:");
+	scanf("%s", senhadigitada);
 	
-	    system("cls");
+	comparacao = strcmp(senhadigitada, "admin");
+	
+	if(comparacao == 0)
+    {
+	
+		system ("cls");    		
+ 	    for(laco = 1; laco = 1;)
+	    {
+	        
+	        setlocale(LC_ALL, "Portugues"); // Localidade idioma; 
+	
+	        printf("### Cartorio da EBAC ### \n \n \n");
+	        printf("Escolha a opcao de acesso no menu: \n \n \n");
+	        printf("\t 1 Registrar nomes \n \n");
+	        printf("\t 2 Consultar nomes \n \n");
+	        printf("\t 3 Deletar nomes \n \n \n");
+	        printf("\t4 - Sair do sistema \n \n");
+	        
+	        scanf("%d", &opcao); //armazena a escolha do usuario
+	        	        	
+	        system("cls");//responsavel por limpar a tela
 	    
-	    setlocale(LC_ALL, "Portugues"); // Localidade idioma; 
-	
-	    printf("### Cartorio da EBAC ### \n \n \n");
-	    printf("Escolha a opcao de acesso no menu: \n \n \n");
-	    printf("\t 1 Registrar nomes \n \n");
-	    printf("\t 2 Consultar nomes \n \n");
-	    printf("\t 3 Deletar nomes \n \n \n");
-	    printf("opcao: ");
-	
-	    scanf("%d" , &opcao); // Armazena a escolha do usuario; 
-	
-	    system("cls");
 	    
-	    
-	    switch(opcao)
-		{
-			case 1: 
-			Registro();
-		    break;
+	        switch(opcao) //inicio da seleçao do menu
+		    {
+			   case 1: 
+			   Registro();
+		       break;
 			
-			case 2:
-			Consulta();
-			break;
+			   case 2:
+			   Consulta();
+			   break;
 			
-			case 3:
-			Deletar();
-		    break;
+			   case 3:
+			   Deletar();
+		       break;
+		       
+		       case 4:
+		       printf("Obrigado por utilizar o sistema! /n");
+			   return 0;
+			   break;	
 		    		    		    
-		    default:
-			printf("Opcao invalida, por favor tentar novamente! \n");
-		    system("pause");
-			break;					
-	   }
-   } 
-				
-   }
-   
+		       default:
+			   printf("Opcao invalida, por favor tentar novamente! \n");
+		       system("pause");
+			   break;					
+	        }
+        }
+    }
+	
+	else
+	    printf("Senha incorreta!");
+		
+}
+      
